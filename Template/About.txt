@@ -1,0 +1,1 @@
+This is a template that contains OpenGL and ImGui set up ready to go!
