@@ -1,7 +1,5 @@
 Template/Release/
-Template/RakNetMessenger/Release/
 *.sdf
-Template/RakNetMessenger/imgui.ini
 *.user
 Template/Template/imgui.ini
 Template/Template/Debug/
