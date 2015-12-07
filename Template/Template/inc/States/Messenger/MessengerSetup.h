@@ -7,8 +7,8 @@
 #ifndef MAIN_MENU_STATE
 #define MAIN_MENU_STATE
 
-#include "PlayStates\ClientState.h"
-#include "PlayStates\ServerState.h"
+#include "States\Messenger\ClientState.h"
+#include "States\Messenger\ServerState.h"
 
 #include "RakPeerInterface.h"
 

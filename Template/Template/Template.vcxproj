@@ -14,6 +14,7 @@
     <ProjectGuid>{992CA567-EE22-4521-92EE-1971A1AB715A}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>RakNetMessenger</RootNamespace>
+    <ProjectName>Template</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -90,18 +91,18 @@
     <ClCompile Include="dep\imgui\imgui_impl_glfw.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Application.cpp" />
-    <ClCompile Include="src\PlayStates\ClientState.cpp" />
-    <ClCompile Include="src\PlayStates\MessengerSetup.cpp" />
-    <ClCompile Include="src\PlayStates\ServerState.cpp" />
+    <ClCompile Include="src\States\Messenger\ClientState.cpp" />
+    <ClCompile Include="src\States\Messenger\MessengerSetup.cpp" />
+    <ClCompile Include="src\States\Messenger\ServerState.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="inc\ClientMessageStruct.h" />
+    <ClInclude Include="inc\States\Messenger\ClientMessageStruct.h" />
     <ClInclude Include="inc\gl_core_4_4.h" />
     <ClInclude Include="inc\Application.h" />
-    <ClInclude Include="inc\MyMessageIdentifiers.h" />
-    <ClInclude Include="inc\PlayStates\ClientState.h" />
-    <ClInclude Include="inc\PlayStates\MessengerSetup.h" />
-    <ClInclude Include="inc\PlayStates\ServerState.h" />
+    <ClInclude Include="inc\States\Messenger\MyMessageIdentifiers.h" />
+    <ClInclude Include="inc\States\Messenger\ClientState.h" />
+    <ClInclude Include="inc\States\Messenger\MessengerSetup.h" />
+    <ClInclude Include="inc\States\Messenger\ServerState.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

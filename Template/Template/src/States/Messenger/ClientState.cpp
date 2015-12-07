@@ -1,13 +1,13 @@
-#include "PlayStates/ClientState.h"
+#include "States\Messenger\ClientState.h"
 
 #include <imgui.h>
 
-#include "ClientMessageStruct.h"
+#include "States\Messenger\ClientMessageStruct.h"
 
 #include "MessageIdentifiers.h"
 #include "RakNetStatistics.h"
 #include "BitStream.h"
-#include "MyMessageIdentifiers.h"
+#include "States\Messenger\MyMessageIdentifiers.h"
 
 #include <glfw3.h>
 

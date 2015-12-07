@@ -1,5 +1,5 @@
-#include "PlayStates/MessengerSetup.h"
-#include "PlayStates/ClientState.h"
+#include "States\Messenger\MessengerSetup.h"
+#include "States\Messenger\ClientState.h"
 
 #include "RakNetTypes.h"  // MessageID
 #include "RakPeer.h"

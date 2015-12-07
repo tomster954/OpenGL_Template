@@ -6,7 +6,7 @@
 #ifndef STARTUP
 #define STARTUP
 //#define GLFW_INCLUDE_GLU
-#include "PlayStates\MessengerSetup.h"
+#include "States\Messenger\MessengerSetup.h"
 
 struct GLFWwindow;
 
