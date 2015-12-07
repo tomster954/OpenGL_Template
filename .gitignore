@@ -2,3 +2,4 @@ Template/Release/
 Template/RakNetMessenger/Release/
 *.sdf
 Template/RakNetMessenger/imgui.ini
+*.user

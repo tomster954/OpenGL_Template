@@ -1,4 +1,4 @@
-#include "PlayStates/MainMenuState.h"
+#include "PlayStates/MessengerSetup.h"
 #include "PlayStates/ClientState.h"
 
 #include "RakNetTypes.h"  // MessageID
@@ -11,7 +11,7 @@
 
 #include <string>
 
-MainMenuState::MainMenuState() :
+MessengerSetupState::MessengerSetupState() :
 m_clientState(ClientState()),
 m_serverState(ServerState()),
 m_isServer(NULL),
@@ -25,19 +25,19 @@ m_canChooseServerOrClient(true)
 	m_serverRoomSize = 5;
 }
 
-MainMenuState::~MainMenuState()
+MessengerSetupState::~MessengerSetupState()
 {
 
 }
 
-void MainMenuState::Initialise(GLFWwindow* a_pWindow)
+void MessengerSetupState::Initialise(GLFWwindow* a_pWindow)
 {
 	m_pWindow = a_pWindow;
 
 	m_peer = RakNet::RakPeerInterface::GetInstance();
 }
 
-void MainMenuState::SetUpServer()
+void MessengerSetupState::SetUpServer()
 {
 	ImGui::SetNextWindowSize(ImVec2(m_windowWidth, m_windowHeight), ImGuiSetCond_Always);
 	ImGui::SetNextWindowPos(ImVec2(0, 0), ImGuiSetCond_Once);
@@ -65,7 +65,7 @@ void MainMenuState::SetUpServer()
 	ImGui::End();
 }
 
-void MainMenuState::SetUpClient()
+void MessengerSetupState::SetUpClient()
 {
 	ImGui::SetNextWindowSize(ImVec2(m_windowWidth, m_windowHeight), ImGuiSetCond_Always);
 	ImGui::SetNextWindowPos(ImVec2(0, 0), ImGuiSetCond_Once);
@@ -108,7 +108,7 @@ void MainMenuState::SetUpClient()
 	ImGui::End();
 }
 
-void MainMenuState::Update(float a_dt)
+void MessengerSetupState::Update(float a_dt)
 {
 	glfwGetWindowSize(m_pWindow, &m_windowWidth, &m_windowHeight);
 
@@ -120,7 +120,7 @@ void MainMenuState::Update(float a_dt)
 
 }
 
-void MainMenuState::Draw()
+void MessengerSetupState::Draw()
 {
 	if (m_canChooseServerOrClient)
 		DrawServerOrClientSelection();
@@ -137,7 +137,7 @@ void MainMenuState::Draw()
 		
 }
 
-void MainMenuState::DrawServerOrClientSelection()
+void MessengerSetupState::DrawServerOrClientSelection()
 {
 	ImGui::SetNextWindowSize(ImVec2(m_windowWidth, m_windowHeight), ImGuiSetCond_Always);
 	ImGui::SetNextWindowPos(ImVec2(0, 0), ImGuiSetCond_Once);

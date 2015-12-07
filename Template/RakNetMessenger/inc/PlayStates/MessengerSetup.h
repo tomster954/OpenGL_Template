@@ -17,11 +17,11 @@
 //Pre Defs
 struct GLFWwindow;
 
-class MainMenuState
+class MessengerSetupState
 {
 public:
-	MainMenuState();
-	~MainMenuState();
+	MessengerSetupState();
+	~MessengerSetupState();
 
 	void Initialise(GLFWwindow* a_pWindow);
 

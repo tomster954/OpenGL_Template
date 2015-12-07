@@ -6,7 +6,7 @@
 #ifndef STARTUP
 #define STARTUP
 //#define GLFW_INCLUDE_GLU
-#include "PlayStates\MainMenuState.h"
+#include "PlayStates\MessengerSetup.h"
 
 struct GLFWwindow;
 
@@ -16,6 +16,7 @@ public:
 	Application();
 	~Application();
 
+	//Set up GLFW
 	void SetUpGLFW();
 
 	void Update();
@@ -30,6 +31,6 @@ private:
 	
 	GLFWwindow* m_pWindow;
 
-	MainMenuState m_mainMenuState;
+	MessengerSetupState m_messengerSetupState;
 };
 #endif

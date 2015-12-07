@@ -15,19 +15,24 @@ Application::Application() :
 m_currentTime(0.0f),
 m_deltaTime(0.0f),
 m_lastTime(0.0f),
-m_mainMenuState(MainMenuState())
+m_messengerSetupState(MessengerSetupState())
 {
+	//Sets up GLFW
 	SetUpGLFW();
 
+	//Initialise ImGui
 	ImGui_ImplGlfw_Init(m_pWindow, true);
 
-	m_mainMenuState.Initialise(m_pWindow);
+	//Setting up the messenger
+	m_messengerSetupState.Initialise(m_pWindow);
 
+	//Main run loop
 	Run();
 }
 
 Application::~Application()
 {
+	//Cleaning up 
 	ImGui_ImplGlfw_Shutdown();
 	glfwDestroyWindow(m_pWindow);
 	glfwTerminate();
@@ -35,21 +40,28 @@ Application::~Application()
 
 void Application::SetUpGLFW()
 {
+	//Setting up error call back
 	glfwSetErrorCallback(error_callback);
+	
+	//If initialisation failed
 	if (!glfwInit())
 	{
 		exit(EXIT_FAILURE);
 		return;
 	}
 
-	m_pWindow = glfwCreateWindow(640, 480, "Chat room", NULL, NULL);
+	//Create a new window
+	m_pWindow = glfwCreateWindow(640, 480, "Window", NULL, NULL);
 
+	//If window initialisation failed
 	if (!m_pWindow)
 	{
 		glfwTerminate();
 		exit(EXIT_FAILURE);
 		return;
 	}
+
+	//Making the new window the current context
 	glfwMakeContextCurrent(m_pWindow);
 
 	//Setting the background to white
@@ -76,11 +88,12 @@ void Application::Run()
 
 void Application::Update()
 {
+	//Calculating deltatime
 	m_currentTime = (float)glfwGetTime();
-	m_deltaTime = m_currentTime - m_lastTime; // prev of last frame
+	m_deltaTime = m_currentTime - m_lastTime;
 	m_lastTime = m_currentTime;
 
-	m_mainMenuState.Update(m_deltaTime);	
+	m_messengerSetupState.Update(m_deltaTime);
 }
 
 void Application::Draw()
@@ -91,7 +104,7 @@ void Application::Draw()
 	ImGui_ImplGlfw_NewFrame();
 
 		ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0);
-			m_mainMenuState.Draw();
+		m_messengerSetupState.Draw();
 		ImGui::PopStyleVar();
 	
 	//Render IMGUI
